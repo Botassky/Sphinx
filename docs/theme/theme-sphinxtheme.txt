@@ -2,7 +2,7 @@
 
 Sphinx Themes
 ====================================================================================================
-`Sphinx Themes <theme-sphinxtheme>`_ に多くのテーマが掲載されています。
+`Sphinx Themes <https://sphinx-themes.org/>`_ に多くのテーマが掲載されています。
 
 .. image:: img/2020-03-01_16h55_27.png
 

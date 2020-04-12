@@ -12,6 +12,7 @@
 | 　　・ :ref:`struct-toctree-toctree`
 | 　　・ :ref:`struct-toctree-toctree-struct`
 | 　　・ :ref:`struct-toctree-toctree-options`
+| ・ :ref:`struct-include`
 
 ----
 
@@ -28,3 +29,7 @@
 ----
 
 .. include:: ./struct-toctree.txt
+
+----
+
+.. include:: ./struct-include.txt

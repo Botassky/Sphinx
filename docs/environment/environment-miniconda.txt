@@ -44,6 +44,6 @@ Miniconda をインストールする
 
 .. image:: img/2020-02-29_20h38_14.png
 
-11. Miniconda のインストールが終了するとメニューに "Anaconda Powershell Prompt(Miniconda3)" と "Anaconda Prompt(Miniconda3)" が登録された
+11. Miniconda のインストールが終了するとメニューに "Anaconda Powershell Prompt(Miniconda3)" と "Anaconda Prompt(Miniconda3)" が登録されます
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 .. image:: img/2020-02-29_20h38_43.png

@@ -1,0 +1,26 @@
+.. _restruct-code-literalinclude:
+
+ファイルから表示するコードの読み込み : literalinclude ディレクティブ
+====================================================================================================
+- ``literalinclude`` を使用してコードをファイルから読み込み、表示します。
+- ``language`` オプションでコードの言語を指定すると、その言語に適したハイライト表示をします。
+- 単なるテキスト表示するときは言語に ``none`` を指定します。
+- 言語を省略すると Sphinx が適切な言語を選択してコードをハイライト表示します
+
+.. code-block:: none
+
+   .. literalinclude:: ./helloworld.java
+      :language: java
+   
+   .. literalinclude:: ./helloworld.java
+      :language: none
+   
+   .. literalinclude:: ./helloworld.java
+
+.. literalinclude:: ./helloworld.java
+   :language: java
+
+.. literalinclude:: ./helloworld.java
+   :language: none
+
+.. literalinclude:: ./helloworld.java

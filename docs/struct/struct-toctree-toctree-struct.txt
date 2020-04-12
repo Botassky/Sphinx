@@ -1,0 +1,52 @@
+.. _struct-toctree-toctree-struct:
+
+下位階層の "rst" ファイルを下位フォルダーに配置した場合
+----------------------------------------------------------------------------------------------------
+下図のように下位階層の ``rst`` ファイルを下位階層のディレクトリーに配置すると、階層構造とファイルの配置が一致し、ドキュメントの流れを追うのが楽になります。
+
+.. code-block:: none
+
+   PS C:\Sphinx\test\source> tree /A /F
+   フォルダー パスの一覧
+   ボリューム シリアル番号は AEB0-CDA6 です
+   C:.
+   |   conf.py
+   |   index.rst
+   |   japanesesupport.py
+   |
+   +---intro
+   |       intro.rst
+   |
+   +---process
+   |       process.rst
+   |
+   +---spec
+   |       spec.rst
+   |
+   +---_static
+   +---_templates
+   \---__pycache__
+           japanesesupport.cpython-37.pyc
+   
+   PS C:\Sphinx\test\source>
+
+.. image:: img/2020-04-11_17h29_43.png
+
+.. image:: img/2020-04-11_17h29_49.png
+
+.. image:: img/2020-04-11_17h29_58.png
+
+.. image:: img/2020-04-11_17h30_03.png
+
+フォルダ構成を反映した "index.rst" ファイルの内容です。
+
+.. code-block:: none
+
+   **************************************************
+   〇〇〇構築手順書
+   **************************************************
+   .. toctree::
+   
+      intro/intro
+      spec/spec
+      process/process
