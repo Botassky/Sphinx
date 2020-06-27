@@ -10,6 +10,7 @@
 | ・ :ref:`restruct-list-table`
 | ・ :ref:`restruct-complexity-table`
 | ・ :ref:`restruct-width`
+| ・ :ref:`restruct-table-title`
 
 ----
 
@@ -248,6 +249,66 @@ CSV テーブル
    * - False
      - True
      - False
+   * - True
+     - True
+     - True
+
+----
+
+.. _restruct-table-title:
+
+テーブル名の追加
+====================================================================================================
+.. code-block:: none
+
+   .. csv-table:: 論理積の結果
+   
+      "A", "B", "A and B"
+      "False", "False", "False"
+      "True", "False", "False"
+      "False", "True", "False"
+      "True", "True", "True"
+
+   .. list-table:: 論理和の結果
+   
+      * - A
+        - B
+        - A or B
+      * - False
+        - False
+        - False
+      * - True
+        - False
+        - True
+      * - False
+        - True
+        - True
+      * - True
+        - True
+        - True
+
+.. csv-table:: 論理積の結果
+
+   "A", "B", "A and B"
+   "False", "False", "False"
+   "True", "False", "False"
+   "False", "True", "False"
+   "True", "True", "True"
+
+.. list-table:: 論理和の結果
+
+   * - A
+     - B
+     - A or B
+   * - False
+     - False
+     - False
+   * - True
+     - False
+     - True
+   * - False
+     - True
+     - True
    * - True
      - True
      - True
