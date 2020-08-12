@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>「テーマ」を変更する &mdash; Windows 10 で Sphinx を使う 2020/08/12 21:54 更新 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="文書の構造" href="../struct/struct.html" />
+    <link rel="prev" title="日本語対応にする（日本語拡張の導入）" href="../japanese/japanese.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Windows 10 で Sphinx を使う
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Last update on 08/12/2020
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">Sphinx の動作環境を作る</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environment/environment.html#environment-miniconda">Miniconda をインストールする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment/environment.html#environment-sphinx">Sphinx をインストールする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment/environment.html#environment-editor">テキストエディターをインストールする</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../walkthrough/walkthrough.html">ドキュメントの作成手順</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../japanese/japanese.html">日本語対応にする（日本語拡張の導入）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../japanese/japanese.html#japanese-shosai">事象の詳細</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../japanese/japanese.html#japanese-step">日本語拡張の導入手順</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">「テーマ」を変更する</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#theme-about">「テーマ」とは</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alabaster">alabaster　←　デフォルトのテーマ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classic">classic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinxdoc">sphinxdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scrolls">scrolls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agogo">agogo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traditional">traditional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nature">nature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#haiku">haiku</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyramid">pyramid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bizstyle">bizstyle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-change">「テーマ」の変更方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx-themes">Sphinx Themes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">導入手順</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../struct/struct.html">文書の構造</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../struct/struct.html#sphinx">Sphinx の文書ファイル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struct/struct.html#struct-header">見出し</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/struct.html#struct-header-struct">見出しの構成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/struct.html#struct-header-example">見出しの例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../struct/struct.html#struct-contents">目次と見出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../struct/struct.html#rst-toctree">&quot;.rst&quot; ファイルの階層化 : toctree ディレクティブ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/struct.html#struct-toctree-split">ドキュメントの分割</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/struct.html#toctree">toctree ディレクティブ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/struct.html#rst">下位階層の &quot;rst&quot; ファイルを下位フォルダーに配置した場合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/struct.html#struct-toctree-toctree-options">toctree ディレクティブのオプション</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../struct/struct.html#include">ドキュメントの分割 : include ディレクティブ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../restruct/restruct.html">いろいろな表現</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-character.html">文字の表現</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-character-italic">強調（イタリック）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-character-bold">強い強調（太字）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-code-sample">コードサンプル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-field-list">フィールドリスト</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-backslush">&quot;\&quot; の表記</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-lineblock">ラインブロック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-list">リスト（箇条書き）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-literal-blocks">リテラルコードブロック</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-roll.html">ロール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#guilabel">ボタンなど : guilabel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#command">コマンド : command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#abbr">言葉の短縮形 : abbr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#file">ファイルやディレクトリ : file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#download">ファイルのダウロード : download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#menuselection">メニューの遷移 : menuselection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#kbd">キーボード : kbd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#math">数式 : math</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-image.html">イメージ : image ディレクティブ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-link.html">リンク</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-link.html#url">URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-link.html#rst">rst ファイル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-link.html#restruct-link-label">ラベル</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-code.html">サンプルコードの表示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-code.html#code-block">コードブロック : code-block ディレクティブ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-code.html#literalinclude">ファイルから表示するコードの読み込み : literalinclude ディレクティブ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-code.html#restruct-code-options">コード表示のオプション</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-table.html">テーブル（表） : table ディレクティブ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-grid-table">グリッドテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-simple-table">シンプルテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#csv">CSV テーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-list-table">リストテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-complexity-table">複雑なテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-width">列幅の変更</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-table-title">テーブル名の追加</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-warning.html">警告ディレクティブ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#attention">attention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#caution">caution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#danger">danger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#error">error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#hint">hint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#important">important</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#note">note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#tip">tip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#warning">warning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#admonition">admonition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-sonota.html">その他の表現</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-sonota.html#restruct-sonota-h-line">横線</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/appendix.html">付録</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/vscode-ja.html">Visual Studio Code の日本語化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#extensions">1. <span class="guilabel">Extensions</span> をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#japanese">2. テキストボックスに &quot;japanese&quot; と入力</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#japanese-language-pack-for-visual-studio-code">3. &quot;Japanese Language Pack for Visual Studio Code&quot; をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#install">4. <span class="guilabel">Install</span> をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#restart-now">5. <span class="guilabel">Restart Now</span> をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#vs-code">6. VS Code が再起動　→　日本語化終了</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">改版履歴</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Windows 10 で Sphinx を使う</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>「テーマ」を変更する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="theme">
+<span id="id1"></span><h1>「テーマ」を変更する<a class="headerlink" href="#theme" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>【トピックス】</strong></div>
+<div class="line">・ <a class="reference internal" href="#theme-about"><span class="std std-ref">「テーマ」とは</span></a></div>
+<div class="line">・ <a class="reference internal" href="#theme-change"><span class="std std-ref">「テーマ」の変更方法</span></a></div>
+<div class="line">・ <a class="reference internal" href="#theme-sphinxtheme"><span class="std std-ref">Sphinx Themes</span></a></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="theme-about">
+<span id="id2"></span><h2>「テーマ」とは<a class="headerlink" href="#theme-about" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sphinx で作成した文書の「見た目」を決めるものが「テーマ」です。この「テーマ」を変更すると「見た目」も変更になります。 Sphinx で作成した文書の「見た目」は「テーマ」で決まります。</p>
+<img alt="../_images/2020-03-01_13h35_38.png" src="../_images/2020-03-01_13h35_38.png" />
+<p>テーマごとに名前が付いており、上図のテーマ名は「 alabaster 」です。 Sphinx が用意しているテーマ（ビルトインテーマ）は次の 10 種類です。いくつかのテーマは「見た目」以外に、複数のオプションを設定できます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ビルトインテーマの詳細は次のページを参照ください。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/theming.html">HTML — Sphinx 4.0.0+/4633ab906 documentation</a></p></li>
+</ul>
+</div>
+<div class="section" id="alabaster">
+<h3>alabaster　←　デフォルトのテーマ<a class="headerlink" href="#alabaster" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h35_38.png" src="../_images/2020-03-01_13h35_38.png" />
+</div>
+<div class="section" id="classic">
+<h3>classic<a class="headerlink" href="#classic" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h36_12.png" src="../_images/2020-03-01_13h36_12.png" />
+</div>
+<div class="section" id="sphinxdoc">
+<h3>sphinxdoc<a class="headerlink" href="#sphinxdoc" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h40_36.png" src="../_images/2020-03-01_13h40_36.png" />
+</div>
+<div class="section" id="scrolls">
+<h3>scrolls<a class="headerlink" href="#scrolls" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h41_10.png" src="../_images/2020-03-01_13h41_10.png" />
+</div>
+<div class="section" id="agogo">
+<h3>agogo<a class="headerlink" href="#agogo" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h42_14.png" src="../_images/2020-03-01_13h42_14.png" />
+</div>
+<div class="section" id="traditional">
+<h3>traditional<a class="headerlink" href="#traditional" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h42_39.png" src="../_images/2020-03-01_13h42_39.png" />
+</div>
+<div class="section" id="nature">
+<h3>nature<a class="headerlink" href="#nature" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h43_05.png" src="../_images/2020-03-01_13h43_05.png" />
+</div>
+<div class="section" id="haiku">
+<h3>haiku<a class="headerlink" href="#haiku" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h43_35.png" src="../_images/2020-03-01_13h43_35.png" />
+</div>
+<div class="section" id="pyramid">
+<h3>pyramid<a class="headerlink" href="#pyramid" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h44_13.png" src="../_images/2020-03-01_13h44_13.png" />
+</div>
+<div class="section" id="bizstyle">
+<h3>bizstyle<a class="headerlink" href="#bizstyle" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="../_images/2020-03-01_13h44_41.png" src="../_images/2020-03-01_13h44_41.png" />
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="theme-change">
+<span id="id3"></span><h2>「テーマ」の変更方法<a class="headerlink" href="#theme-change" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>&quot;conf.py&quot; ファイル内の<code class="docutils literal notranslate"><span class="pre">html_theme</span></code>で使用するテーマを指定します。</p>
+<img alt="../_images/2020-03-01_15h55_35.png" src="../_images/2020-03-01_15h55_35.png" />
+<p>&quot;alabaster&quot; から &quot;classic&quot; にするには次のように変更・保存します。必要に応じて、テーマのオプション設定を行います。</p>
+<img alt="../_images/2020-03-01_16h20_24.png" src="../_images/2020-03-01_16h20_24.png" />
+<p>その後、&quot;<strong class="command">make html</strong>&quot;を実行して HTML を再作成します。</p>
+<img alt="../_images/2020-03-01_16h24_27.png" src="../_images/2020-03-01_16h24_27.png" />
+<hr class="docutils" />
+</div>
+<div class="section" id="sphinx-themes">
+<span id="theme-sphinxtheme"></span><h2>Sphinx Themes<a class="headerlink" href="#sphinx-themes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="https://sphinx-themes.org/">Sphinx Themes</a>に多くのテーマが掲載されています。</p>
+<img alt="../_images/2020-03-01_16h55_27.png" src="../_images/2020-03-01_16h55_27.png" />
+<p>各テーマには 3 つのリンクが設定されています。</p>
+<dl class="simple">
+<dt>sample</dt><dd><p>サンプル表示を確認できます。</p>
+</dd>
+<dt>pypi</dt><dd><p>インストール方法などの説明が記載されています。</p>
+</dd>
+<dt>conf.py</dt><dd><p>&quot;conf.py&quot; ファイルの設定サンプルが記載されています。</p>
+</dd>
+</dl>
+<div class="section" id="id5">
+<h3>導入手順<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>今回は &quot;sphinx_rtd_theme&quot; の導入を例に説明します。</p>
+<img alt="../_images/2020-03-01_18h34_11.png" src="../_images/2020-03-01_18h34_11.png" />
+<ol class="arabic">
+<li><p><a class="reference external" href="https://pypi.org/project/sphinx-rtd-theme/">pypi</a>をクリックして導入方法を確認</p>
+<img alt="../_images/2020-03-01_18h36_16.png" src="../_images/2020-03-01_18h36_16.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p>&quot;Anaconda Powershell Prompt(Miniconda3)&quot; でインストールコマンドを実行</p>
+<p><strong class="command">pip install sphinx-rtd-theme</strong></p>
+<img alt="../_images/2020-03-01_18h39_01.png" src="../_images/2020-03-01_18h39_01.png" />
+<img alt="../_images/2020-03-01_18h39_19.png" src="../_images/2020-03-01_18h39_19.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p>&quot;conf.py&quot; ファイルの<code class="docutils literal notranslate"><span class="pre">html_theme</span></code>を変更</p>
+<img alt="../_images/2020-03-01_18h41_41.png" src="../_images/2020-03-01_18h41_41.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p>&quot;<strong class="command">make html</strong>&quot;を実行して HTML を作り直し</p>
+<img alt="../_images/2020-03-01_18h43_35.png" src="../_images/2020-03-01_18h43_35.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p>&quot;index.html&quot; ファイルを開いて結果確認</p>
+<img alt="../_images/2020-03-01_18h45_32.png" src="../_images/2020-03-01_18h45_32.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../_images/2020-03-01_18h46_19.png" src="../_images/2020-03-01_18h46_19.png" />
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../struct/struct.html" class="btn btn-neutral float-right" title="文書の構造" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../japanese/japanese.html" class="btn btn-neutral float-left" title="日本語対応にする（日本語拡張の導入）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yoichi Muraoka
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

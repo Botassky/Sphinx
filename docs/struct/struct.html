@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>文書の構造 &mdash; Windows 10 で Sphinx を使う 2020/08/12 21:54 更新 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="いろいろな表現" href="../restruct/restruct.html" />
+    <link rel="prev" title="「テーマ」を変更する" href="../theme/theme.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Windows 10 で Sphinx を使う
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Last update on 08/12/2020
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">Sphinx の動作環境を作る</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environment/environment.html#environment-miniconda">Miniconda をインストールする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment/environment.html#environment-sphinx">Sphinx をインストールする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment/environment.html#environment-editor">テキストエディターをインストールする</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../walkthrough/walkthrough.html">ドキュメントの作成手順</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../japanese/japanese.html">日本語対応にする（日本語拡張の導入）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../japanese/japanese.html#japanese-shosai">事象の詳細</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../japanese/japanese.html#japanese-step">日本語拡張の導入手順</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../theme/theme.html">「テーマ」を変更する</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../theme/theme.html#theme-about">「テーマ」とは</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#alabaster">alabaster　←　デフォルトのテーマ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#classic">classic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#sphinxdoc">sphinxdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#scrolls">scrolls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#agogo">agogo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#traditional">traditional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#nature">nature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#haiku">haiku</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#pyramid">pyramid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#bizstyle">bizstyle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../theme/theme.html#theme-change">「テーマ」の変更方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme/theme.html#sphinx-themes">Sphinx Themes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../theme/theme.html#id5">導入手順</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">文書の構造</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">Sphinx の文書ファイル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#struct-header">見出し</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#struct-header-struct">見出しの構成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#struct-header-example">見出しの例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#struct-contents">目次と見出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rst-toctree">&quot;.rst&quot; ファイルの階層化 : toctree ディレクティブ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#struct-toctree-split">ドキュメントの分割</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toctree">toctree ディレクティブ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rst">下位階層の &quot;rst&quot; ファイルを下位フォルダーに配置した場合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#struct-toctree-toctree-options">toctree ディレクティブのオプション</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#include">ドキュメントの分割 : include ディレクティブ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../restruct/restruct.html">いろいろな表現</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-character.html">文字の表現</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-character-italic">強調（イタリック）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-character-bold">強い強調（太字）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-code-sample">コードサンプル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-field-list">フィールドリスト</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-backslush">&quot;\&quot; の表記</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-lineblock">ラインブロック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-list">リスト（箇条書き）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-character.html#restruct-literal-blocks">リテラルコードブロック</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-roll.html">ロール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#guilabel">ボタンなど : guilabel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#command">コマンド : command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#abbr">言葉の短縮形 : abbr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#file">ファイルやディレクトリ : file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#download">ファイルのダウロード : download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#menuselection">メニューの遷移 : menuselection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#kbd">キーボード : kbd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-roll.html#math">数式 : math</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-image.html">イメージ : image ディレクティブ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-link.html">リンク</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-link.html#url">URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-link.html#rst">rst ファイル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-link.html#restruct-link-label">ラベル</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-code.html">サンプルコードの表示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-code.html#code-block">コードブロック : code-block ディレクティブ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-code.html#literalinclude">ファイルから表示するコードの読み込み : literalinclude ディレクティブ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-code.html#restruct-code-options">コード表示のオプション</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-table.html">テーブル（表） : table ディレクティブ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-grid-table">グリッドテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-simple-table">シンプルテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#csv">CSV テーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-list-table">リストテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-complexity-table">複雑なテーブル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-width">列幅の変更</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-table.html#restruct-table-title">テーブル名の追加</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-warning.html">警告ディレクティブ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#attention">attention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#caution">caution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#danger">danger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#error">error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#hint">hint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#important">important</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#note">note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#tip">tip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#warning">warning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-warning.html#admonition">admonition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restruct/restruct-sonota.html">その他の表現</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../restruct/restruct-sonota.html#restruct-sonota-h-line">横線</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/appendix.html">付録</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/vscode-ja.html">Visual Studio Code の日本語化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#extensions">1. <span class="guilabel">Extensions</span> をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#japanese">2. テキストボックスに &quot;japanese&quot; と入力</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#japanese-language-pack-for-visual-studio-code">3. &quot;Japanese Language Pack for Visual Studio Code&quot; をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#install">4. <span class="guilabel">Install</span> をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#restart-now">5. <span class="guilabel">Restart Now</span> をクリック</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/vscode-ja.html#vs-code">6. VS Code が再起動　→　日本語化終了</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">改版履歴</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Windows 10 で Sphinx を使う</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>文書の構造</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct">
+<span id="id1"></span><h1>文書の構造<a class="headerlink" href="#struct" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>【トピックス】</strong></div>
+<div class="line">・ <a class="reference internal" href="#struct-file"><span class="std std-ref">Sphinx の文書ファイル</span></a></div>
+<div class="line">・ <a class="reference internal" href="#struct-header"><span class="std std-ref">見出し</span></a></div>
+<div class="line">・ <a class="reference internal" href="#struct-contents"><span class="std std-ref">目次と見出し</span></a></div>
+<div class="line">・ <a class="reference internal" href="#struct-toctree"><span class="std std-ref">&quot;.rst&quot; ファイルの階層化 : toctree ディレクティブ</span></a></div>
+<div class="line">　　・ <a class="reference internal" href="#struct-toctree-split"><span class="std std-ref">ドキュメントの分割</span></a></div>
+<div class="line">　　・ <a class="reference internal" href="#struct-toctree-toctree"><span class="std std-ref">toctree ディレクティブ</span></a></div>
+<div class="line">　　・ <a class="reference internal" href="#struct-toctree-toctree-struct"><span class="std std-ref">下位階層の &quot;rst&quot; ファイルを下位フォルダーに配置した場合</span></a></div>
+<div class="line">　　・ <a class="reference internal" href="#struct-toctree-toctree-options"><span class="std std-ref">toctree ディレクティブのオプション</span></a></div>
+<div class="line">・ <a class="reference internal" href="#struct-include"><span class="std std-ref">ドキュメントの分割 : include ディレクティブ</span></a></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sphinx">
+<span id="struct-file"></span><h2>Sphinx の文書ファイル<a class="headerlink" href="#sphinx" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p>Sphinx は reStructuredText と呼ばれるマークアップ言語を使用して文書を書きます。</p></li>
+<li><p>reStructuredText で書いたファイル自体はテキストファイルですが、ファイル拡張子は<code class="docutils literal notranslate"><span class="pre">.rst</span></code>です。</p></li>
+<li><p>HTML に変換したとき、1 つの rst ファイルが 1 つの HTML ファイルになります。</p></li>
+<li><p>インデントは 3 文字単位です。タブ文字は使用できません。</p></li>
+<li><p>&quot;index.rst&quot; ファイルがすべての文書の起点です。すべての<code class="docutils literal notranslate"><span class="pre">.rst</span></code>ファイルは &quot;index.rst&quot; を起点に tree 状に結合されます。</p></li>
+</ul>
+<img alt="../_images/2020-03-01_21h39_01.png" src="../_images/2020-03-01_21h39_01.png" />
+<hr class="docutils" />
+</div>
+<div class="section" id="struct-header">
+<span id="id2"></span><h2>見出し<a class="headerlink" href="#struct-header" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="struct-header-struct">
+<span id="id3"></span><h3>見出しの構成<a class="headerlink" href="#struct-header-struct" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>文書のくくりは大きな方から 「章」→「セクション」→「サブセクション」→「サブサブセクション」→「パラグラフ」 になります。</p></li>
+<li><p>それぞれのくくりの最初に記述する見出しは次のように記述します。 HTML に変換したときは、それぞれ異なるサイズの文字に変換されます。</p></li>
+<li><p>見出しに使用する<code class="docutils literal notranslate"><span class="pre">*</span></code>や<code class="docutils literal notranslate"><span class="pre">=</span></code>など記号は見出しの文字列と同じまたはそれよりも長くなければなりません。</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##########
+部の見出し
+##########
+
+**********
+章の見出し
+**********
+
+セクションの見出し
+==================
+
+サブセクションの見出し
+----------------------
+
+サブサブセクションの見出し
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+パラグラフの見出し
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="struct-header-example">
+<span id="id4"></span><h3>見出しの例<a class="headerlink" href="#struct-header-example" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>実際に &quot;index.rst&quot; ファイルを変更し、各見出しのサイズなどの見え方を確認します。 &quot;sphinx-quickstart&quot; コマンドで作成した &quot;index.rst&quot; ファイルの内容をすべて削除し、次のように変更しました。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+部の見出し
+##################################################
+部の紹介文。
+
+**************************************************
+章の見出し
+**************************************************
+章の紹介文。
+
+セクションの見出し
+==================================================
+セクションの紹介文。
+
+サブセクションの見出し
+--------------------------------------------------
+サブセクションの紹介文。
+
+サブサブセクションの見出し
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+サブサブセクションの紹介文。
+
+パラグラフの見出し
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+パラグラフの紹介文。
+</pre></div>
+</div>
+<p>HTML に変換した結果です。それぞれの見出しの文字サイズが少しずつ異なっています。</p>
+<img alt="../_images/2020-04-11_09h15_23.png" src="../_images/2020-04-11_09h15_23.png" />
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="struct-contents">
+<span id="id5"></span><h2>目次と見出し<a class="headerlink" href="#struct-contents" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>画面左側に表示されるドキュメントの目次は Sphinx が文書構造を元に自動的に作成します。例えば &quot;index.rst&quot; ファイルの内容が次のような場合の目次を確認します。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+第一部　〇〇〇
+##################################################
+
+**************************************************
+はじめに
+**************************************************
+このドキュメントは〇〇〇の構築手順を説明したものです。
+
+**************************************************
+環境構築
+**************************************************
+
+ハードウェアスペック：最小
+==================================================
+CPU
+--------------------------------------------------
+Intel Core i9-9900K
+
+MEMORY
+--------------------------------------------------
+8GB
+
+HDD
+--------------------------------------------------
+80GB
+
+ハードウェアスペック：推奨
+==================================================
+CPU
+--------------------------------------------------
+Intel Core i9-10980XE
+
+MEMORY
+--------------------------------------------------
+64GB
+
+M2.SSD
+--------------------------------------------------
+1TB
+</pre></div>
+</div>
+<p>見出しを使用して自動的に目次を作成します。</p>
+<img alt="../_images/2020-04-11_15h09_36.png" src="../_images/2020-04-11_15h09_36.png" />
+<hr class="docutils" />
+</div>
+<div class="section" id="rst-toctree">
+<span id="struct-toctree"></span><h2>&quot;.rst&quot; ファイルの階層化 : toctree ディレクティブ<a class="headerlink" href="#rst-toctree" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="struct-toctree-split">
+<span id="id6"></span><h3>ドキュメントの分割<a class="headerlink" href="#struct-toctree-split" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>「<a class="reference internal" href="#struct-contents"><span class="std std-ref">目次と見出し</span></a>」のように 1 つの<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルに複数の「部」や「章」などを書いてもドキュメントは作成できます。しかし、この方法ではページのサイズが長くなり、視認性や検索性、メンテナンス性などに劣るドキュメントになります。</p>
+<p>この問題の解決方法は文書を「章」などのある程度のまとまりで分割し、そのまとまりごとに<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルを作成することです。</p>
+<img alt="../_images/2020-03-08_16h36_35.png" src="../_images/2020-03-08_16h36_35.png" />
+<p>今回のファイルの配置場所です。すべて &quot;index.rst&quot; ファイルと同じフォルダーに配置しました。</p>
+<img alt="../_images/2020-04-11_16h37_36.png" src="../_images/2020-04-11_16h37_36.png" />
+<p>各ファイルの内容と表示内容です。</p>
+<p>■ index.rst</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+〇〇〇構築手順書
+##################################################
+.. toctree::
+
+   intro.rst
+   ./spec
+   process
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_16h44_44.png" src="../_images/2020-04-11_16h44_44.png" />
+<p>■ intro.rst</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**************************************************
+はじめに
+**************************************************
+
+ご挨拶
+==================================================
+
+この度は弊社製品である 〇〇〇 をご購入くださりありがとうございます。
+〇〇〇 は皆様の作業効率および生産性向上を目的に開発しました。不具合が
+あれば、下記までご連絡ください。
+
+お問い合わせ先
+==================================================
+電話　+81-12-3456-7890
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_16h44_56.png" src="../_images/2020-04-11_16h44_56.png" />
+<p>■ spec.rst</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**************************************************
+構築対象機器の要件
+**************************************************
+〇〇〇 をインストールする機器の要件を説明します。
+
+最小要件
+==================================================
+□□□ の要件を満たしていること。
+
+推奨要件
+==================================================
+△△△ の要件を満たしていること。
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_16h45_02.png" src="../_images/2020-04-11_16h45_02.png" />
+<p>■ process.rst</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**************************************************
+インストール手順
+**************************************************
+〇〇〇 のインストール手順を説明します。
+
+機器の準備
+==================================================
+「最小要件」以上の危機を準備、電源を ON にしてください。
+
+インストールメディアの準備
+==================================================
+インストールメディアは弊社サポートサイトからダウンロードできます。
+サイトの URL はユーザー登録時に弊社から送信したメールに記載されて
+います。
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_16h45_07.png" src="../_images/2020-04-11_16h45_07.png" />
+</div>
+<div class="section" id="toctree">
+<span id="struct-toctree-toctree"></span><h3>toctree ディレクティブ<a class="headerlink" href="#toctree" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイル間の階層構造は<code class="docutils literal notranslate"><span class="pre">toctree</span></code>ディレクティブで定義します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">toctree</span></code>ディレクティブは上位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルに指定します。</p></li>
+<li><p>上位階層と下位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルの設置場所は同じフォルダ－でも、異なるフォルダーでも問題ありません。</p></li>
+<li><p>下位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルの指定は上位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルを起点とした相対指定で行います。</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>&quot;index.rst&quot; ファイル以外の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルは、必ず<code class="docutils literal notranslate"><span class="pre">toctree</span></code>ディレクティブで指定されなければなりません。</p>
+</div>
+<p>ファイルの配置位置と<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイル間の関係です。</p>
+<img alt="../_images/2020-03-08_16h59_38.png" src="../_images/2020-03-08_16h59_38.png" />
+<img alt="../_images/2020-03-08_16h36_35.png" src="../_images/2020-03-08_16h36_35.png" />
+<p>&quot;index.rst&quot; ファイルの内容です。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+〇〇〇構築手順書
+##################################################
+.. toctree::
+
+   intro.rst
+   ./spec
+   process
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>HTML に変換すると、下位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルの見出し部分を使用した目次が作成されます。目次にはすべての見出しが展開・表示されます。</p></li>
+<li><p>下位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルの指定方法は拡張子付き、相対パスであることを示す、ファイル名だけのいずれの形式でも問題ありません。</p></li>
+</ul>
+<img alt="../_images/2020-04-11_16h44_44.png" src="../_images/2020-04-11_16h44_44.png" />
+</div>
+<div class="section" id="rst">
+<span id="struct-toctree-toctree-struct"></span><h3>下位階層の &quot;rst&quot; ファイルを下位フォルダーに配置した場合<a class="headerlink" href="#rst" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>下図のように下位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルを下位階層のディレクトリーに配置すると、階層構造とファイルの配置が一致し、ドキュメントの流れを追うのが楽になります。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\Sphinx\test\source&gt; tree /A /F
+フォルダー パスの一覧
+ボリューム シリアル番号は AEB0-CDA6 です
+C:.
+|   conf.py
+|   index.rst
+|   japanesesupport.py
+|
++---intro
+|       intro.rst
+|
++---process
+|       process.rst
+|
++---spec
+|       spec.rst
+|
++---_static
++---_templates
+\---__pycache__
+        japanesesupport.cpython-37.pyc
+
+PS C:\Sphinx\test\source&gt;
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_17h29_43.png" src="../_images/2020-04-11_17h29_43.png" />
+<img alt="../_images/2020-04-11_17h29_49.png" src="../_images/2020-04-11_17h29_49.png" />
+<img alt="../_images/2020-04-11_17h29_58.png" src="../_images/2020-04-11_17h29_58.png" />
+<img alt="../_images/2020-04-11_17h30_03.png" src="../_images/2020-04-11_17h30_03.png" />
+<p>フォルダ構成を反映した &quot;index.rst&quot; ファイルの内容です。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**************************************************
+〇〇〇構築手順書
+**************************************************
+.. toctree::
+
+   intro/intro
+   spec/spec
+   process/process
+</pre></div>
+</div>
+</div>
+<div class="section" id="struct-toctree-toctree-options">
+<span id="id7"></span><h3>toctree ディレクティブのオプション<a class="headerlink" href="#struct-toctree-toctree-options" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="hidden">
+<span id="struct-toctree-toctree-options-hidden"></span><h4>hidden オプション<a class="headerlink" href="#hidden" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>目次を表示しません。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+〇〇〇構築手順書
+##################################################
+.. toctree::
+   :hidden:
+
+   intro/intro
+   spec/spec
+   process/process
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_18h17_07.png" src="../_images/2020-04-11_18h17_07.png" />
+</div>
+<div class="section" id="numbered">
+<span id="struct-toctree-toctree-options-numbered"></span><h4>numbered オプション<a class="headerlink" href="#numbered" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>下位階層の<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルの見出しに自動で通し番号を付けます。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+〇〇〇構築手順書
+##################################################
+.. toctree::
+   :numbered:
+
+   intro/intro
+   spec/spec
+   process/process
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_18h18_59.png" src="../_images/2020-04-11_18h18_59.png" />
+<img alt="../_images/2020-04-11_18h19_32.png" src="../_images/2020-04-11_18h19_32.png" />
+<img alt="../_images/2020-04-11_18h19_37.png" src="../_images/2020-04-11_18h19_37.png" />
+<img alt="../_images/2020-04-11_18h19_41.png" src="../_images/2020-04-11_18h19_41.png" />
+</div>
+<div class="section" id="maxdepth">
+<span id="struct-toctree-toctree-options-maxdepth"></span><h4>maxdepth オプション<a class="headerlink" href="#maxdepth" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>目次として展開する見出しのレベルを指定します。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+〇〇〇構築手順書
+##################################################
+.. toctree::
+   :maxdepth: 1
+
+   intro/intro
+   spec/spec
+   process/process
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_18h22_46.png" src="../_images/2020-04-11_18h22_46.png" />
+<p><code class="docutils literal notranslate"><span class="pre">numbered</span></code>オプションと併用した場合です。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################################################
+〇〇〇構築手順書
+##################################################
+.. toctree::
+   :maxdepth: 1
+   :numbered:
+
+   intro/intro
+   spec/spec
+   process/process
+</pre></div>
+</div>
+<img alt="../_images/2020-04-11_18h23_31.png" src="../_images/2020-04-11_18h23_31.png" />
+<hr class="docutils" />
+</div>
+</div>
+</div>
+<div class="section" id="include">
+<span id="struct-include"></span><h2>ドキュメントの分割 : include ディレクティブ<a class="headerlink" href="#include" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">include</span></code>ディレクティブは指定したファイルの内容を展開します。この機能を使用して「章」単位に分割した<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイルを「セクション」単位に分割します。</p>
+<p>分割前の &quot;process.rst&quot; の内容です。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**************************************************
+インストール手順
+**************************************************
+〇〇〇 のインストール手順を説明します。
+
+機器の準備
+==================================================
+「最小要件」以上の危機を準備、電源を ON にしてください。
+
+インストールメディアの準備
+==================================================
+インストールメディアは弊社サポートサイトからダウンロードできます。
+サイトの URL はユーザー登録時に弊社から送信したメールに記載されて
+います。
+</pre></div>
+</div>
+<p>&quot;process.rst&quot; の分割後の process フォルダーの状態です。<code class="docutils literal notranslate"><span class="pre">rst</span></code>ファイル以外に<code class="docutils literal notranslate"><span class="pre">txt</span></code>ファイルが 2 つ増えています。&quot;process.rst&quot; ファイルを分割した（切り出した）内容が、この<code class="docutils literal notranslate"><span class="pre">txt</span></code>ファイルに記録されています。</p>
+<img alt="../_images/2020-04-11_19h05_13.png" src="../_images/2020-04-11_19h05_13.png" />
+<p>分割後の &quot;process.rst&quot; ファイルの内容です。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**************************************************
+インストール手順
+**************************************************
+〇〇〇 のインストール手順を説明します。
+
+.. include:: process-junbi.txt
+.. include:: process-media.txt
+</pre></div>
+</div>
+<p>&quot;process-junbi.txt&quot; ファイルの内容です。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>機器の準備
+==================================================
+「最小要件」以上の危機を準備、電源を ON にしてください。
+</pre></div>
+</div>
+<p>&quot;process-media.txt&quot; ファイルの内容です。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>インストールメディアの準備
+==================================================
+インストールメディアは弊社サポートサイトからダウンロードできます。
+サイトの URL はユーザー登録時に弊社から送信したメールに記載されて
+います。
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../restruct/restruct.html" class="btn btn-neutral float-right" title="いろいろな表現" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../theme/theme.html" class="btn btn-neutral float-left" title="「テーマ」を変更する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yoichi Muraoka
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
