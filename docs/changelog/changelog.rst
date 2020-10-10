@@ -1,4 +1,4 @@
-.. chnagelog:
+.. _chnagelog:
 
 改版履歴
 ====================================================================================================
@@ -11,4 +11,5 @@
      - 初版公開
    * - 2020/06/27
      - :ref:`restruct-link-rst` , :ref:`restruct-link-label` , :ref:`restruct-table-title` , :ref:`restruct-list-etc-numbered`
-   
+   * - 2020/10/10
+     - :ref:`vscode-ja` の項番を変更   
