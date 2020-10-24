@@ -33,5 +33,6 @@ Sphinx とは
    ./theme/theme
    ./struct/struct
    ./restruct/restruct
+   ./css/css
    ./appendix/appendix
    ./changelog/changelog

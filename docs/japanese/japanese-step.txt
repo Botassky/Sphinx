@@ -7,36 +7,49 @@
 
    この手順は文書ごとに必要です。
 
-#. ブラウザーで「 `不自然な空白が表示される — Python製ドキュメンテーションビルダー、Sphinxの日本ユーザ会 <https://sphinx-users.jp/reverse-dict/html/japanese.html>`_ 」を開く　→　``ここから`` を右クリック
+#. ブラウザーで https://github.com/sphinxjp/goodies を開く
 
-   .. image:: img/2020-03-01_11h40_13.png
-
-   |
-
-#. メニュー内の "名前を付けてリンクを保存(K)" をクリック
-
-   .. image:: img/2020-03-01_11h41_09.png
+   .. image:: img/2020-10-17_17h47_12.png
 
    |
 
-#. "japanesesupport.py" ファイルを保存
+#. :guilabel:`Code` をクリック　→　:guilabel:`Download ZIP` をクリック
 
-   | " :command:`sphinx-quickstart` "コマンドを実行したときに "conf.py" ファイルが作成されます。このファイルと同じフォルダーに "japanesesupport.py" ファイルを保存します。
-   | 今回は "C:\\Sphinx\\test\\source" フォルダーに保存します。
-
-   .. image:: img/2020-03-01_11h44_15.png
+   .. image:: img/2020-10-17_17h47_26.png
 
    |
 
-#. :guilabel:`・・・` をクリック　→　"フォルダーに表示(S)" をクリック
+#. ZIP ファイルのダウンロード終了　→　:guilabel:`・・・` をクリック　→　:guilabel:`フォルダーに表示(S)` をクリック
 
-   .. image:: img/2020-03-01_11h44_38.png
+   .. image:: img/2020-10-17_17h47_55.png
 
    |
 
-#. "japanesesupport.py" ファイルが "conf.py" ファイルと同じフォルダーに保存されたことを確認
+#. ダウンロードした ZIP ファイルを確認　→　展開
 
-   .. image:: img/2020-03-01_11h45_12.png
+   .. image:: img/2020-10-17_17h49_59.png
+
+   |
+
+#. 展開後のファイルを確認
+
+   ユーザー名が user の場合、次のフォルダーにファイルがあります。
+
+   .. code-block:: none
+
+      C:¥Users¥user¥Downloads¥goodies-master¥goodies-master¥exts¥japanesesupport
+
+   .. image:: img/2020-10-17_17h50_42.png
+
+   |
+
+#. 展開後の "japanesesupport.py" ファイルを "conf.py" ファイルと同じフォルダーに保存
+
+   .. image:: img/2020-10-17_17h55_36.png
+
+   ↓
+
+   .. image:: img/2020-10-17_17h55_46.png
 
    |
 
@@ -48,7 +61,9 @@
 
 #. 2 箇所修正　→　保存
 
-   ※ 行位置は変更になる可能性があります。
+   .. note::
+
+      Sphinx のバージョンにより行位置が異なります。
 
    13 行目
       - 修正前　# import os

@@ -20,10 +20,6 @@
          }
       }
    
-   .. literalinclude:: ./helloworld.java
-      :language: java
-      :linenos:
-
 .. code-block:: java
    :linenos:
 
@@ -33,6 +29,11 @@
       }
    }
 
+.. code-block:: none
+
+   .. literalinclude:: ./helloworld.java
+      :language: java
+      :linenos:
 
 .. literalinclude:: ./helloworld.java
    :language: java
@@ -43,8 +44,8 @@
 特定の行を網掛け表示
 ----------------------------------------------------------------------------------------------------
 - ``emphasize-lines`` オプションで指定した行をハイライト表示します。
-- "," で区切って複数の行を指定します。　例　1 行目と 10 行目を網掛け表示　→　1, 10
-- "-" で連続する行を指定します。　例 1 行目から 10 行目を網掛け表示　→　1-10
+- "," で区切って複数の行を指定します。　例：1 行目と 10 行目を網掛け表示　→　1, 10
+- "-" で連続する行を指定します。　例：1 行目から 10 行目を網掛け表示　→　1-10
 
 .. code-block:: none
 
@@ -57,11 +58,6 @@
          }
       }
    
-   
-   .. literalinclude:: ./helloworld.java
-      :language: java
-      :emphasize-lines: 2, 4
-
 .. code-block:: java
    :emphasize-lines: 2, 4
 
@@ -71,6 +67,11 @@
       }
    }
 
+.. code-block:: none
+
+   .. literalinclude:: ./helloworld.java
+      :language: java
+      :emphasize-lines: 2, 4
 
 .. literalinclude:: ./helloworld.java
    :language: java

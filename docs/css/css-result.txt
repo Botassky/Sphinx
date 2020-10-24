@@ -1,0 +1,23 @@
+.. _css-result:
+
+実行結果
+==================================================
+- rst ファイル
+
+   .. literalinclude:: ./index.txt
+      :language: none
+
+- CSS ファイル
+
+   .. literalinclude:: ./custom.css
+      :language: none
+
+- CSS ファイルの指定なし
+
+   .. image:: img/2020-10-24_10h28_29.png
+
+- CSS ファイルの指定あり
+
+   CSS ファイルで ``h1`` タグを変更しており、その内容が反映されます。
+
+   .. image:: img/2020-10-24_10h29_06.png

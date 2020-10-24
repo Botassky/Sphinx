@@ -1,11 +1,15 @@
 .. _restruct-code-block:
 
 コードブロック : code-block ディレクティブ
-====================================================================================================
+==================================================
 - ``code-block`` を使用してコードを表示します。
 - コードの言語を指定すると、その言語に適したハイライト表示をします。
 - 単なるテキスト表示するときは言語に ``none`` を指定します。
-- 言語を省略すると Sphinx が適切な言語を選択してコードをハイライト表示します
+- 言語を省略すると Sphinx が適切な言語を選択してコードをハイライト表示します。
+
+表示例
+--------------------------------------------------
+- 言語指定あり：java
 
 .. code-block:: none
 
@@ -17,21 +21,6 @@
          }
       }
    
-   .. code-block:: none
-   
-      public class HelloWorld{
-         public static void main(String[] args){
-           System.out.println("hello, world");
-         }
-      }
-   
-   .. code-block::
-   
-      public class HelloWorld{
-         public static void main(String[] args){
-           System.out.println("hello, world");
-         }
-      }
 
 .. code-block:: java
 
@@ -41,6 +30,18 @@
       }
    }
 
+- 言語指定あり：none （ハイライト表示なし）
+
+.. code-block:: none
+
+   .. code-block:: none
+   
+      public class HelloWorld{
+         public static void main(String[] args){
+           System.out.println("hello, world");
+         }
+      }
+   
 .. code-block:: none
 
    public class HelloWorld{
@@ -48,6 +49,19 @@
         System.out.println("hello, world");
       }
    }
+
+- 言語指定なし：Sphinx が言語を自動判断
+
+.. code-block:: none
+
+   .. code-block::
+   
+      public class HelloWorld{
+         public static void main(String[] args){
+           System.out.println("hello, world");
+         }
+      }
+
 
 .. code-block::
 
